@@ -1,6 +1,8 @@
 package S04;
 
 
+
+
 public class Solution1 {
 
 
@@ -28,15 +30,12 @@ public class Solution1 {
 
 
         for (int i = 0; i < newChars.length; i++) {
-            if (newChars[i] == ' ') {
-                for (int j = i; j < newChars.length - count * 2 && count > 0; j++) {
-                    String.copyValueOf(newChars,j+3,)
-                    newChars[j  +  3] = newChars[j + 1];
-                }
+            if (newChars[i] == ' ' && count > 0) {
+                System.arraycopy(newChars, i + 1, newChars, i + 3, newChars.length  - count * 2);
                 count--;
                 newChars[i] = '%';
-                newChars[i+1] = '2';
-                newChars[i+2] = '0';
+                newChars[i + 1] = '2';
+                newChars[i + 2] = '0';
             }
         }
         return new String(newChars);
