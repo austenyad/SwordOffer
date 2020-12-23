@@ -11,6 +11,8 @@ public class Solution1 {
      * @return
      */
     public static String transStr(String str) {
+        if (str == null) return null;
+
 
         char[] chars = str.toCharArray();
         int whiteCount = 0;
@@ -29,7 +31,8 @@ public class Solution1 {
             p1--;
             p2--;
             if (newChars[p1] == ' ') {
-                p1--;
+                p1 --;
+
                 newChars[p2] = '0';
                 newChars[--p2] = '2';
                 newChars[--p2] = '%';
@@ -41,5 +44,9 @@ public class Solution1 {
 
     public static void main(String[] args) {
         System.out.println(transStr("We are happy"));
+        System.out.println(transStr("Wearehappy"));
+        System.out.println(transStr(null));
+        System.out.println(transStr(""));
+        System.out.println(transStr("We are  happy"));
     }
 }
