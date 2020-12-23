@@ -27,17 +27,14 @@ public class Solution1 {
         int p1 = newChars.length - 1 - whiteCount * 2;
 
         while (p1 != p2) {
-            newChars[p2] = newChars[p1];
-            p1--;
-            p2--;
             if (newChars[p1] == ' ') {
-                p1 --;
-
-                newChars[p2] = '0';
-                newChars[--p2] = '2';
-                newChars[--p2] = '%';
-                p2--;
+                newChars[p2--] = '0';
+                newChars[p2--] = '2';
+                newChars[p2--] = '%';
+            }else {
+                newChars[p1--] = newChars[p2--];
             }
+            p1--;
         }
         return new String(newChars);
     }
